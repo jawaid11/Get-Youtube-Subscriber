@@ -1,0 +1,25 @@
+{
+  "name": "get-youtube-subscriber",
+  "version": "1.0.0",
+  "description": "It is a backend project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawaid11/Get-Youtube-Subscriber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawaid11/Get-Youtube-Subscriber/issues"
+  },
+  "homepage": "https://github.com/jawaid11/Get-Youtube-Subscriber#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.4"
+  }
+}
