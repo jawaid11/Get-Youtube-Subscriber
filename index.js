@@ -1,20 +1,14 @@
 const express = require('express')
-require("./src/createDatabase")
-// const app = require('./app.js')
-// const mongoose = require('mongoose')
+const mongoose = require("mongoose");
+const app = require("./src/app")
+
 const port = 3000
-
-// Parse JSON bodies (as sent by API clients)
-// app.use(express.json())
-// app.use(express.urlencoded({ extended: false }));
-const app = express() 
-
-// Connect to DATABASE
-// const DATABASE_URL = "mongodb://localhost/subscribers";
-// mongoose.connect(DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true });
-// const db = mongoose.connection
-// db.on('error', (err) => console.log(err))
-// db.once('open', () => console.log('connected to database'))
-
+app.use(express.json())
+mongoose.set('strictQuery', true);
+const DATABASE_URL = "mongodb+srv://jawaidhussain:J%40waid001@cluster0.qfkyqgd.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(DATABASE_URL);
+const db = mongoose.connection;
+db.on('error', (err) => console.log(err));
+db.once('open', () => console.log('Database created...'));
 // Start Server
 app.listen(port, () => console.log(`App listening on port ${port}!`))
