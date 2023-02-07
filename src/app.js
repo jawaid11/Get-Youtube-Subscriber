@@ -1,5 +1,4 @@
 const express = require("express");
-
 const Subscriber = require("./models/subscribers");
 const app = express();
 
@@ -23,22 +22,22 @@ app.get("/subscribers", async (req, res) => {
     console.log()
   }
 });
- 
+
 
 // getting perticular subscriber data by name
 app.get("/subscribers/names", async (req, res) => {
   try {
     // To retrieve a list of subscribers
     const subscriberDataByName = await Subscriber
-    .find()
-    .select("-__v -_id -subscribedDate");
+      .find()
+      .select("-__v -_id -subscribedDate");
 
     // If successful, send a response with a status code of 200 and the list of subscribers
     res.status(200).send(subscriberDataByName);
   } catch (err) {
     // If error occurs, send a response with a status code of 500 and an error message
     res.status(500).send(err);
-  } 
+  }
 });
 
 // getting perticular subscriber data by Id
@@ -47,9 +46,9 @@ app.get("/subscribers/:id", async (req, res) => {
   try {
     const _id = req.params.id
     const subscriberData = await Subscriber.findById(_id).select("-__v -_id -subscribedDate");
-    if(!subscriberData) {
+    if (!subscriberData) {
       return res.status(404).send();
-    }else{
+    } else {
       res.status(200).send(subscriberData);
     }
   } catch (err) {

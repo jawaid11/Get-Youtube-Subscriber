@@ -25,7 +25,6 @@ The app has been deployed on
 
 Use Postman to add new subscribers, Update or Delete subscribers from the database.
 
-Note : GET by Id and GET by Name are in the same route so we coannot use both the requests simultaneously to use one request other will comment out.
 
 
 
